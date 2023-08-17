@@ -1,0 +1,7 @@
+@import "app/variables";
+
+.item {
+    &:hover {
+        background-color: rgb($orange, 10%);
+    }
+}

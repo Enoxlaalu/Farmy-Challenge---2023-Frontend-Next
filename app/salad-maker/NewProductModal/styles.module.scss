@@ -1,0 +1,35 @@
+@import "app/variables";
+
+.input {
+    margin-bottom: 8px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.button {
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-size: 30px;
+    color: $lightGrey;
+    background-color: $superLightGrey;
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.textWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 24px 0 8px;
+}
+
+.text {
+    color: $darkGrey;
+}
