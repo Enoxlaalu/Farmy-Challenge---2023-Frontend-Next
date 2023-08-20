@@ -51,18 +51,11 @@ const SuppliersSection = ({ salads, ingredients }) => {
         if (!currentSupplier) {
           const newSupplier = suppliers.find((s) => s.id === i.supplierId);
           suppliersToOrderFrom[i.supplierId] = {
-            // id: newSupplier.id,
             name: newSupplier.name,
             ingredients: [currentIngredient],
-            // urgent: urgent && [currentIngredient],
           };
-          // currentIngredient.supplierId = newSupplier.id;
         } else {
           currentSupplier.ingredients.push(currentIngredient);
-          // if (urgent) {
-          //   currentSupplier.urgent.push(currentIngredient);
-          // }
-          // currentIngredient.supplierId = currentSupplier.id;
         }
       }
     });

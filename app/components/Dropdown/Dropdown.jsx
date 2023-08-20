@@ -60,9 +60,7 @@ const Dropdown = memo(({ Item, Items }) => {
       >
         <ul
           ref={ref}
-          className={`${styles.dropdown} ${
-            customElements && styles.withCustomElements
-          }`}
+          className={styles.dropdown}
           style={{ top, left, width }}
           onClick={close}
         >

@@ -6,7 +6,7 @@ import ProductsList from "@/app/salad-maker/ProductsList/ProductsList";
 import Button from "@/app/components/Button/Button";
 import styles from "./styles.module.scss";
 import Select from "@/app/components/Select/Select";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { saveNewSalad } from "@/app/api/api";
 import { useRouter } from "next/navigation";
 import Badge from "@/app/components/Badge/Badge";
@@ -36,25 +36,31 @@ const NewProductModal = ({ open, close, ingredients, saladTypes }) => {
     );
   }, [rows]);
 
-  const updateRow = (row) => {
-    const newRows = [...rows].map((r) => {
-      if (r.id === row.id) {
-        return row;
-      }
+  const updateRow = useCallback(
+    (row) => {
+      const newRows = [...rows].map((r) => {
+        if (r.id === row.id) {
+          return row;
+        }
 
-      return r;
-    });
+        return r;
+      });
 
-    setRows(newRows);
-  };
+      setRows(newRows);
+    },
+    [rows],
+  );
 
-  const deleteRow = (row) => {
-    const newRows = [...rows].filter((r) => r.id !== row.id);
+  const deleteRow = useCallback(
+    (row) => {
+      const newRows = [...rows].filter((r) => r.id !== row.id);
 
-    setRows(newRows);
-  };
+      setRows(newRows);
+    },
+    [rows],
+  );
 
-  const changeName = (name) => setName(name);
+  const changeName = useCallback((name) => setName(name), []);
   const changeSize = (size) => setSize(size);
 
   const AddItem = () => <button className={styles.button}>+</button>;

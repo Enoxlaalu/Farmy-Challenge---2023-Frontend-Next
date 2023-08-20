@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
+import { memo } from "react";
 
-const Input = ({ id, value, onChange, className, endIcon }) => {
+const Input = memo(({ id, value, onChange, className, endIcon }) => {
   const handleChange = (e) => onChange(e.target.value);
 
   return (
@@ -9,6 +10,6 @@ const Input = ({ id, value, onChange, className, endIcon }) => {
       {endIcon && <span className={styles.endIcon}>{endIcon}</span>}
     </div>
   );
-};
+});
 
 export default Input;

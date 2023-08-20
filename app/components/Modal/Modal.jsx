@@ -1,12 +1,6 @@
 import styles from "./styles.module.scss";
 
-const Modal = ({
-  open,
-
-  body,
-  onClose,
-  className,
-}) => {
+const Modal = ({ open, body, onClose, className }) => {
   const renderModal = () => {
     return (
       <div data-name="modal" className={styles.modal}>

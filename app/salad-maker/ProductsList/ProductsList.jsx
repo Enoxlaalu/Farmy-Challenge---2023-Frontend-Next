@@ -2,9 +2,9 @@
 
 import ProductsListItem from "@/app/salad-maker/ProductsListItem/ProductsListItem";
 import styles from "./styles.module.scss";
-import { useState } from "react";
+import { memo } from "react";
 
-const ProductsList = ({ rows, updateRow, deleteRow }) => {
+const ProductsList = memo(({ rows, updateRow, deleteRow }) => {
   return (
     <ul className={styles.list}>
       {rows.map((r) => (
@@ -17,6 +17,6 @@ const ProductsList = ({ rows, updateRow, deleteRow }) => {
       ))}
     </ul>
   );
-};
+});
 
 export default ProductsList;

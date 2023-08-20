@@ -1,9 +1,11 @@
+@import "app/variables";
+
 .input {
     position: relative;
 
     input {
         width: 100%;
-        border: 1px solid #ccc;
+        border: 1px solid $border;
         box-shadow: 0 3px 24px rgba(0, 0, 0, 0.05);
         border-radius: 5px;
         padding: 12px;

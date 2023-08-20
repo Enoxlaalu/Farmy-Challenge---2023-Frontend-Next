@@ -1,10 +1,11 @@
 import styles from "./styles.module.scss";
-import { useState } from "react";
+import { memo, useState } from "react";
 
 const sizes = ["small", "medium", "large"];
 
-const Badge = ({ text, color = "orange", onClick }) => {
+const Badge = memo(({ text, color = "orange", onClick }) => {
   const [currentSize, setCurrentSize] = useState(0);
+
   const handleClick = () => {
     const nextSize = currentSize === sizes.length - 1 ? 0 : currentSize + 1;
     onClick(sizes[nextSize]);
@@ -16,6 +17,6 @@ const Badge = ({ text, color = "orange", onClick }) => {
       {sizes[currentSize]}
     </div>
   );
-};
+});
 
 export default Badge;
